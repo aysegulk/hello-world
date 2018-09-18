@@ -8,128 +8,110 @@
 	xmlns:p="http://primefaces.org/ui"
   xmlns:rich="http://richfaces.org/rich">
 
-<h:head>
+<head>
   
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     
 <meta name="description" content="target,performance,system" />
     
 <meta name="author" content="akunt" />
-<link rel="icon" href="/resources/images/icons/icon.ico" type="image/x-icon"/>
-<title>  
+<link rel="icon" href="/resources/images/icons/favicon.ico" type="image/x-icon"/>
+<title> 
 TRGet!
 </title>
-<link href="../resources/bootstrap/css/bootstrap.css" rel="stylesheet" />
- <link href="../resources/css/main.css" rel="stylesheet" />,
- <link href="../resources/fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+   <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../../resources/bootstrap/css/album.css" rel="stylesheet" />
+
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+ </head>
   
- </h:head>
- <body class="bg-light text-center">
+<body class="text-center">
+<header>
+       <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">TRGet!</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"></input>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="../login.xhtml">Sign out</a>
+        </li>
+      </ul>
+ </nav>
 
-    <div class="container">
-      <div class="col-md-8 order-md-1">
-       <img class="d-block mx-auto mb-4" src="../resources/images/registration.jpg" alt="" width="300" height="100" />
-        <h2>Registeration Form</h2>
-        </div>
-    
-            
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Please Check Your Information</h4>
-          <form class="needs-validation" novalidate="">
-          
-      	<div class="col-md-6 mb-3">
-                <label for="email">Email</label>
-                <output type="text" class="form-control" id="email" required="#{registerBean.user.email}">
-               
-              </div>
-            <div class="row">
-                       
-              <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" value="#{registerBean.user.name}" required="">
-                <div class="invalid-feedback">
-                  Valid first name is required.
+    </header>
+
+
+    <main role="main" class="container">
+      <div class="album py-5 bg-light">
+        
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="../../resources/images/teambuilding.jpg" alt="Card image cap"/>
+                <div class="card-body">
+                  <p class="card-text">Build Your Team!</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Enter</button>
+                    </div>
+                    
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" value="#{registerBean.user.surname}" required="">
-                <div class="invalid-feedback">
-                  Valid last name is required.
+            </div>
+                   <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="../../resources/images/teamm.jpg" alt="Card image cap"/>
+                <div class="card-body">
+                  <p class="card-text">Manage Your Team!</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Enter</button>
+                    </div>
+                    
+                  </div>
                 </div>
               </div>
             </div>
 
-   
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="country">Country</label>
-                <select class="custom-select d-block w-100" id="country" required="">
-                  <option value="">Choose...</option>
-                  <option>Turkey</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid country.
+                  <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="../../resources/images/target.png" alt="Card image cap"/>
+                  <p class="card-text">Manage Targets!</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Enter</button>
+                    </div>
+                    
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="state">City</label>
-                <select class="custom-select d-block w-100" id="state" required="">
-                  <option value="">Choose...</option>
-                  <option>Istanbul</option>
-                    <option>Ankara</option>
-                      <option>Izmir</option>
-                        <option>Bursa</option>
-                          <option>Zonguldak</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div>
-             
               </div>
             </div>
 
-            <hr class="col-md-8 order-md-1">
-            <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="#{registerBean.register()}">Register</button>
-         </form>
+           
+          </div>
         </div>
       </div>
+    </main>
 
-    </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
-
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-  
-
-</body>
-
+ <footer class="footer">
+      <div class="container">
+             <span class="text-muted">
+             <i class="fa fa-registered" aria-hidden="true"> by AKA 2018 </i>
+             
+              </span>
+      </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"></script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+  </body>
 </html>

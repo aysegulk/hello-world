@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -7,24 +8,36 @@
 	xmlns:p="http://primefaces.org/ui"
   xmlns:rich="http://richfaces.org/rich">
 
-<h:head>
+<head>
   
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     
 <meta name="description" content="target,performance,system" />
     
 <meta name="author" content="akunt" />
-
-<link href="resources/images/icons/icon.ico" rel="icon" />
-
-<title>TRGet!
-
+<link rel="icon" href="/resources/images/icons/favicon.ico" type="image/x-icon"/>
+<title> 
+TRGet!
 </title>
-    <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-      <link href="resources/css/signin.css" rel="stylesheet" />
-    
- </h:head>
+   <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="resources/css/signin.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+ </head>
+  
  <body> 
+ 
+    <header>
+       <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">TRGet!</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"/>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="../login.xhtml">Sign out</a>
+        </li>
+      </ul>
+</nav>
+    </header>
+ 
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <main role="main" class="inner cover">
         <h1 class="cover-heading">Unauthorized User</h1>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+  xmlns:rich="http://richfaces.org/rich">
+
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+<meta name="description" content="target,performance,system" />
+    
+<meta name="author" content="akunt" />
+<link rel="icon" href="/resources/images/icons/favicon.ico" type="image/x-icon"/>
+<title> 
+TRGet!
+</title>
+   <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="../../resources/bootstrap/css/album.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+ </head>
+  <body>
+
+   <header>
+       <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">TRGet!</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"></input>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="../login.xhtml">Sign out</a>
+        </li>
+      </ul>
+ </nav>
+
+    </header>
+
+      
+ <main role="main" class="container">
+
+    <form>
+      <div class="col-md-8 order-md-1">
+              <h2>Target Definition</h2>
+       </div>
+    		<br />
+          	<div class="row">
+           
+      		<div class="col-md-6 mb-3">
+                <label for="text">Criteria Name</label>
+                <input type="text" class="form-control" id="critName" action="#{critBean.criteria.criteriaName}" />
+              
+           </div>
+              </div>
+            <div class="row">
+                       
+              <div class="col-md-6 mb-3">
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="start"  action="#{critBean.criteria.finishDate}"/>
+					<p:calendar inputStyle="padding:5px;margin:5px;color:#80FF80;bottom:auto;font-weight:bold;text-decoration:none;clear:both;font-size:medium;border-color:Black;font-style:oblique;background-color:Bisque;background-repeat:repeat-x;width:100px;font-family:Lucida Bright;border-width:medium;border-style:double;text-align:center;height:100;">
+					</p:calendar>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Finish Date</label>
+                <input type="date" class="form-control" id="finish"  action="#{critBean.criteria.finishDate}"/>
+					<p:calendar inputStyle="padding:5px;margin:5px;color:#80FF80;bottom:auto;font-weight:bold;text-decoration:none;clear:both;font-size:medium;border-color:Black;font-style:oblique;background-color:Bisque;background-repeat:repeat-x;width:100px;font-family:Lucida Bright;border-width:medium;border-style:double;text-align:center;height:100;">
+					</p:calendar>
+                
+              </div>
+            </div>
+
+   
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="type">Unit</label>
+                <select class="custom-select d-block w-100" id="type" required="#{critBean.criteria.unit}">
+                  <option value="">Choose...</option>
+                  <option>TRY</option>
+                   <option>USD</option>
+                    <option>UNIT</option>
+                     <option>TASK</option>
+                </select>
+              
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="amount">Total Amount</label>
+                <input type="number" class="form-control" id="amount"  action="#{critBean.criteria.totalAmount}"/>
+               
+                           </div>
+             
+              </div>
+           </div>
+
+            <hr class="col-md-8 order-md-1">
+            <button class="btn btn- btn-primary btn-block" type="submit" onclick="#{critBean.createCrit()}">Add To Criteria List</button>
+         </form>
+             
+</main> 
+
+ <footer class="footer">
+      <div class="container">
+             <span class="text-muted"><i class="fa fa-registered" aria-hidden="true"> by AKA 2018 </i> </span>
+      </div>
+    </footer>
+
+  </body>
+</html>

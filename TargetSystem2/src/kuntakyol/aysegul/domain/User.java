@@ -21,87 +21,106 @@ public class User {
 	private String password;
 	private String name;
 	private String surname;
-	private Role role;
+	
 	
 @ManyToOne
-	private Manager manager;
+private Role role;
+	
+@ManyToOne
+private Manager manager;
 
 @ManyToMany
 private Set<Criteria> criterias;
 
 
-	public User() {
-		super();
-		this.manager = new Manager();
-	}
 
-	public User(String email, String password, String name, String surname, Manager manager, Criteria criteria) {
-		super();
-		this.email = email;
-		this.password = password;
-		this.name = name;
-		this.surname = surname;
-		this.manager = manager;
-		this.criterias =criterias;
-	}
+public User() {
+	super();
+}
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
+public User(String email, String password, String name, String surname, Role role, Manager manager,
+		Set<Criteria> criterias) {
+	super();
+	this.email = email;
+	this.password = password;
+	this.name = name;
+	this.surname = surname;
+	this.role = role;
+	this.manager = manager;
+	this.criterias = criterias;
+}
 
-	public String getEmail() {
-		return email;
-	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+public int getId() {
+	return id;
+}
 
-	public String getPassword() {
-		return password;
-	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+public void setId(int id) {
+	this.id = id;
+}
 
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+public String getEmail() {
+	return email;
+}
 
-	public String getSurname() {
-		return surname;
-	}
+public void setEmail(String email) {
+	this.email = email;
+}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
+public String getPassword() {
+	return password;
+}
 
-	public Manager getManager() {
-		return manager;
-	}
+public void setPassword(String password) {
+	this.password = password;
+}
 
-	public void setManager(Manager manager) {
-		this.manager = manager;
-	}
+public String getName() {
+	return name;
+}
 
-	public Role getRole() {
-		return role;
-	}
+public void setName(String name) {
+	this.name = name;
+}
 
-	public void setRole(Role role) {
-		this.role = role;
-	}
+public String getSurname() {
+	return surname;
+}
 
-	
+public void setSurname(String surname) {
+	this.surname = surname;
+}
+
+public Role getRole() {
+	return role;
+}
+
+public void setRole(Role role) {
+	this.role = role;
+}
+
+
+
+public Manager getManager() {
+	return manager;
+}
+
+
+public void setManager(Manager manager) {
+	this.manager = manager;
+}
+
+
+public Set<Criteria> getCriterias() {
+	return criterias;
+}
+
+public void setCriterias(Set<Criteria> criterias) {
+	this.criterias = criterias;
+}
 
 
 }

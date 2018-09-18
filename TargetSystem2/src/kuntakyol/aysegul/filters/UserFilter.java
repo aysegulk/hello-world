@@ -1,7 +1,7 @@
 package kuntakyol.aysegul.filters;
 
 import java.io.IOException;
-
+import javax.servlet.DispatcherType;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,18 +15,20 @@ import javax.servlet.http.HttpSession;
 
 import kuntakyol.aysegul.mbeans.LoginBean;
 
+
+
 /**
  * Servlet Filter implementation class AdminFilter
  */
 @WebFilter(urlPatterns = { "/user/*" })
 public class UserFilter implements Filter {
 
-	/**
-	 * Default constructor.
-	 */
-	public UserFilter() {
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * Default constructor. 
+     */
+    public UserFilter() {
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see Filter#destroy()
@@ -38,21 +40,31 @@ public class UserFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-
-		HttpServletRequest req = (HttpServletRequest) request;
-		HttpServletResponse res = (HttpServletResponse) response;
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		
+		HttpServletRequest req = (HttpServletRequest)request;
+		HttpServletResponse res = (HttpServletResponse)response;
+		
 		HttpSession session = req.getSession();
-
-		if (session.getAttribute("loginBean") == null) {
-			res.sendRedirect(req.getContextPath() + "/unauthorized.xhtml");
-		} else {
-			LoginBean loginBean = (LoginBean) session.getAttribute("loginBean");
-			if (loginBean.getLoggedUser() == null || loginBean.getLoggedUser().getId()== 0) {
-				res.sendRedirect(req.getContextPath() + "/unauthorized.xhtml");
-			}
+		
+		if(session.getAttribute("loginBean")==null)
+		{
+			//Hiç login olmamış demektir
+			res.sendRedirect(req.getContextPath()+"/unauthorized.xhtml");
 		}
+		else
+		{
+			  LoginBean loginBean = (LoginBean)session.getAttribute("loginBean");
+			 
+			  if(loginBean.getRole()==null || !loginBean.getRole().getRoleName().equals("user"))
+			  {
+				  res.sendRedirect(req.getContextPath()+"/unauthorized.xhtml");
+			  }
+		}
+	  
+		
+
+		// pass the request along the filter chain
 		chain.doFilter(request, response);
 	}
 

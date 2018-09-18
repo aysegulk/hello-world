@@ -1,0 +1,127 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+  xmlns:rich="http://richfaces.org/rich">
+
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+<meta name="description" content="target,performance,system" />
+    
+<meta name="author" content="akunt" />
+<link rel="icon" href="/resources/images/icons/favicon.ico" type="image/x-icon"/>
+<title> 
+TRGet!
+</title>
+   <link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="../resources/css/main.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+ </head>
+  
+  
+<body class="text-center">
+
+    <header>
+       <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">TRGet!</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"/>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="login.xhtml">Sign in</a>
+        </li>
+      </ul>
+</nav>
+    </header>
+    
+ <main role="main" class="container">
+
+    <form>
+      <div class="col-md-8 order-md-1">
+       <img class="d-block mx-auto mb-4" src="../resources/images/registration.jpg" alt="" width="300" height="100"/>
+        <h2>Registeration Form</h2>
+       </div>
+    		<br />
+            
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Please Check Your Information</h4>
+          <form class="needs-validation" novalidate=""/>
+          
+          <div class="row">
+           
+      		<div class="col-md-6 mb-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" action="#{registerBean.user.email}" placeholder="Email"/>
+                <div class="invalid-feedback">
+                  Valid first name is required
+                </div>
+              </div>
+              </div>
+            <div class="row">
+                       
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" action="#{registerBean.user.name}" placeholder="First Name"/>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" action="#{registerBean.user.surname}" placeholder="Surname"/>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+   
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="country">Region</label>
+                <select class="custom-select d-block w-100" id="country" required="">
+                  <option value="">Choose...</option>
+                  <option>Turkey</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="state">City</label>
+                <select class="custom-select d-block w-100" id="state" required="">
+                  <option value="">Choose...</option>
+                  <option>Istanbul</option>
+                    <option>Ankara</option>
+                      <option>Izmir</option>
+                        <option>Bursa</option>
+                          <option>Zonguldak</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+             
+              </div>
+            </div>
+
+            <hr class="col-md-8 order-md-1">
+            <button class="btn btn- btn-primary btn-block" type="submit" onclick="#{registerBean.register()}">Register</button>
+        </form>
+             
+</main> 
+
+ <footer class="footer">
+      <div class="container">
+             <span class="text-muted"><i class="fa fa-registered" aria-hidden="true"> by AKA 2018 </i> </span>
+      </div>
+    </footer>
+
+</body>
+
+</html>

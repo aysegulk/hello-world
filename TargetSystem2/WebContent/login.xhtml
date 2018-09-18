@@ -8,42 +8,63 @@
 	xmlns:p="http://primefaces.org/ui"
   xmlns:rich="http://richfaces.org/rich">
 
-<h:head>
+<head>
   
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     
 <meta name="description" content="target,performance,system" />
     
 <meta name="author" content="akunt" />
-<link rel="icon" href="/resources/images/icons/icon.ico" type="image/x-icon"/>
-<title>  
+<link rel="icon" href="/resources/images/icons/favicon.ico" type="image/x-icon"/>
+<title> 
 TRGet!
 </title>
-	
-   <link href="resources/css/signin.css" rel="stylesheet" />
    <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  
- </h:head>
+   <link href="resources/css/signin.css" rel="stylesheet" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+ </head>
   
 <body class="text-center">
-    <form class="form-signin">
+
+    <header>
+       <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">TRGet!</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="registration.xhtml">Sign up</a>
+        </li>
+      </ul>
+      
+    	</nav>
+
+    </header>
+ 
+ 
+    <main role="main" class="container">
+
+   <form class="form-signin">
     <img width="300" height="200" class="mb-4" alt="" src="resources/images/goal.jpg" />
       
-<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+	<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label class="sr-only" for="inputEmail">Email address</label>
 	 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="#{loginBean.email}" />
 	 <label class="sr-only" for="inputPassword">Password</label>
      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="#{loginBean.password}"/>   
-<div class="checkbox mb-3">
+	 <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="#{loginBean.login()}" >Sign in</button>
-     
-<p class="mt-5 mb-3 text-muted">2018</p>
+
 </form>
-	
+ </main> 
+ <footer class="footer">
+      <div class="container">
+      	        <span class="text-muted"><i class="fa fa-registered"></i> by AKA 2018.</span>
+      </div>
+    </footer>
+
 </body>
 
 </html>
